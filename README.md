@@ -18,7 +18,7 @@ Notice how the node only needs to broadcast transactions in case you want to wri
 
 A `Provider` is an Ethereum node connection that allows you to read data from its state. You will use a `Provider` to do things like calling read-only functions in smart contracts, fetching balances of accounts, fetching transaction details, etc.
 
-A `Signer` is an Ethereum node connection that allows you to write data to the blockchain. You will use a `Signer` to do things like calling write functions in smart contracts, trasnferring ETH between accounts, etc. To do so, the `Signer` needs access to a `Private Key` it can use for making transactions on behalf of an account.
+A `Signer` is an Ethereum node connection that allows you to write data to the blockchain. You will use a `Signer` to do things like calling write functions in smart contracts, transferring ETH between accounts, etc. To do so, the `Signer` needs access to a `Private Key` it can use for making transactions on behalf of an account.
 
 Additionally, a `Signer` can do everything a `Provider` can. You can do both, reading and writing, using a `Signer`, but a `Provider` is only good for reading data.
 
