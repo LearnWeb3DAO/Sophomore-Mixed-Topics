@@ -153,7 +153,7 @@ Ok, so what does this mean for us?
 
 Well, note how Bob had to give approval to the contract, so the contract could *pull* Bob's tokens from his account. 
 
-Therfore, Bob essentially had to do two transactions to replicate the behaviour of what could be done in one transaction if payment was being accepted in ETH.
+Therefore, Bob essentially had to do two transactions to replicate the behaviour of what could be done in one transaction if payment was being accepted in ETH.
 
 **Transaction 1** - Give allowance to the contract
 **Transaction 2** - Call the contract function, which internally uses the allowance to transfer Bob's tokens to a different address
