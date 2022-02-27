@@ -18,7 +18,7 @@ Notice how the node only needs to broadcast transactions in case you want to wri
 
 A `Provider` is an Ethereum node connection that allows you to read data from its state. You will use a `Provider` to do things like calling read-only functions in smart contracts, fetching balances of accounts, fetching transaction details, etc.
 
-A `Signer` is an Ethereum node connection that allows you to write data to the blockchain. You will use a `Signer` to do things like calling write functions in smart contracts, trasnferring ETH between accounts, etc. To do so, the `Signer` needs access to a `Private Key` it can use for making transactions on behalf of an account.
+A `Signer` is an Ethereum node connection that allows you to write data to the blockchain. You will use a `Signer` to do things like calling write functions in smart contracts, transferring ETH between accounts, etc. To do so, the `Signer` needs access to a `Private Key` it can use for making transactions on behalf of an account.
 
 Additionally, a `Signer` can do everything a `Provider` can. You can do both, reading and writing, using a `Signer`, but a `Provider` is only good for reading data.
 
@@ -71,13 +71,13 @@ ABIs help us achieve exactly that. When you compile your Solidity code, an ABI i
 So, when you want to call a contract, you need it's address (of course), but you also need to provide it's ABI. Libraries like `ethers.js` use the ABI to encode and decode the human readable functions into bytecode and back when communicating with an Ethereum node and calling functions in smart contracts.
 
 ## React Hooks
-In Sophomore tutorials and beyond, we will be developing websites using React and Next.js. Often times, we will be using some React-specific features to help in writing clean code.
+In Sophomore tutorials and beyond, we will be developing websites using React and Next.js. Oftentimes, we will be using some React-specific features to help in writing clean code.
 
 A really important feature of React is [React Hooks](https://reactjs.org/docs/hooks-intro.html).
 
-We will not try to reinvent the wheel and teach you in detail what React Hooks are, as there are a lot of other resource for that, but we will list the things that are relevant so you can focus on that.
+We will not try to reinvent the wheel and teach you in detail what React Hooks are, as there are a lot of other resources for that, but we will list the things that are relevant so you can focus on that.
 
-React comes in built with ~10 hooks, and developers can create their own hooks as well. For our purposes, we will focus on 3 that we use regularly, and the rest you can learn if you want.
+React comes inbuilt with ~10 hooks, and developers can create their own hooks as well. For our purposes, we will focus on 3 that we use regularly, and the rest you can learn if you want.
 
 Read up on these three hooks and understand what they are used for.
 
@@ -99,7 +99,7 @@ The `payable` keyword is only good for ETH payments. If you wanted to use your o
 First, let's think about this a little bit.
 
 - Okay, so you cannot *send* ERC20 tokens along with a function call, like you can do with ETH
-- Perhaps the smart-contract can somehow *pull* tokens from the function caller's account?
+- Perhaps the smart contract can somehow *pull* tokens from the function caller's account?
 - But that would mean I can code a smart contract that steals everyone's tokens if someone makes a transaction with my contract
 - So we need a safer way to *pull* tokens out of someone's account
 
@@ -126,7 +126,7 @@ Let's try to think about this with the help of an example.
 `Alicecoin` is an ERC20 token. ERC20 comes inbuilt with a few functions that relate to the Allowance concept.
 
 #### `approve(address spender, uint256 amount)`
-This allows a user to `approve` a different address to spend upto `amount` tokens on their behalf. i.e. This function provides an Allowance to the `spender` of upto `amount`
+This allows a user to `approve` a different address to spend up to `amount` tokens on their behalf. i.e. This function provides an Allowance to the `spender` of up to `amount`
 
 
 #### `transferFrom(address from, address to, uint256 amount)`
@@ -140,10 +140,10 @@ If the user is someone other than the `from` address, the `from` address must ha
 
 Continuing with the example now:
 
-- Bob gives Alice's NFT contract the allowance to spend upto 10 of his `Alicecoin` using the `approve` function
+- Bob gives Alice's NFT contract the allowance to spend up to 10 of his `Alicecoin` using the `approve` function
 - Bob calls the function to purchase Alice's NFT on her NFT contract
 - The purchase function internally calls `transferFrom` on `Alicecoin` and transfers 10 Alicecoin from Bob's account to Alice's account
-- Since the contract was given the allowance to spend upto 10 Alicecoin by Bob earlier, this action is permitted
+- Since the contract was given the allowance to spend up to 10 Alicecoin by Bob earlier, this action is permitted
 - Alice therefore receives her 10 Alicecoin, and Bob receives his NFT
 
 
@@ -153,7 +153,7 @@ Ok, so what does this mean for us?
 
 Well, note how Bob had to give approval to the contract, so the contract could *pull* Bob's tokens from his account. 
 
-Therfore, Bob essentially had to do two transactions to replicate the behaviour of what could be done in one transaction if payment was being accepted in ETH.
+Therefore, Bob essentially had to do two transactions to replicate the behaviour of what could be done in one transaction if payment was being accepted in ETH.
 
 **Transaction 1** - Give allowance to the contract
 **Transaction 2** - Call the contract function, which internally uses the allowance to transfer Bob's tokens to a different address
