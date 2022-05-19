@@ -70,21 +70,6 @@ ABIs help us achieve exactly that. When you compile your Solidity code, an ABI i
 
 So, when you want to call a contract, you need its address (of course), but you also need to provide its ABI. Libraries like `ethers.js` use the ABI to encode and decode the human readable functions into bytecode and back when communicating with an Ethereum node and calling functions in smart contracts.
 
-## React Hooks
-In Sophomore tutorials and beyond, we will be developing websites using React and Next.js. Oftentimes, we will be using some React-specific features to help in writing clean code.
-
-A really important feature of React is [React Hooks](https://reactjs.org/docs/hooks-intro.html).
-
-We will not try to reinvent the wheel and teach you in detail what React Hooks are, as there are a lot of other resources for that, but we will list the things that are relevant so you can focus on that.
-
-React comes inbuilt with ~10 hooks, and developers can create their own hooks as well. For our purposes, we will focus on 3 that we use regularly, and the rest you can learn if you want.
-
-Read up on these three hooks and understand what they are used for.
-
-- [useState](https://www.w3schools.com/react/react_usestate.asp)
-- [useEffect](https://www.w3schools.com/react/react_useeffect.asp)
-- [useRef](https://www.w3schools.com/react/react_useref.asp)
-
 ## ERC20 Approval Flow
 In the past, we learnt about `payable` functions which allow smart contracts to accept an ETH payment when a function is called. This is really useful if you want to charge users in ETH in exchange for something - for example an NFT sale. 
 
