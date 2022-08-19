@@ -6,7 +6,6 @@ There are a few topics that we wanted to provide some information on, but weren'
 - [Providers and Signers](#providers-and-signers)
 - [BigNumbers](#bignumbers)
 - [ABI](#abi)
-- [React Hooks](#react-hooks)
 - [ERC20 Approval Flow](#erc20-approval-flow)
 
 ## Providers and Signers
